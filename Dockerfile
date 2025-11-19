@@ -11,6 +11,8 @@ ENV BUILD_SCRIPTS_DIR=/opt/build_scripts
 COPY scripts $BUILD_SCRIPTS_DIR
 RUN chmod -R 750 $BUILD_SCRIPTS_DIR
 
+RUN sed -i 's@deb.debian.org@mirror.zim.uni-due.de@g' /etc/apt/sources.list.d/debian.sources
+
 ONBUILD ENV METEOR_DISABLE_OPTIMISTIC_CACHING=1
 
 # Define all --build-arg options
