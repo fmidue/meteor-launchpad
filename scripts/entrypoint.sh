@@ -2,6 +2,10 @@
 
 set -e
 
+# Load NVM for runtime
+export NVM_DIR="/opt/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # Set a delay to wait to start the Node process
 if [[ $STARTUP_DELAY ]]; then
   echo "Delaying startup for $STARTUP_DELAY seconds..."
